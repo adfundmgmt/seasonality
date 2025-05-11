@@ -32,23 +32,25 @@ MONTH_LABELS = [
 # ── Streamlit Page Config & Sidebar ───────────────────────
 
 st.set_page_config(page_title="Seasonality Dashboard", layout="wide")
-st.title("📈 Monthly Seasonality Analysis")
+st.title("Monthly Seasonality Explorer")
 
 with st.sidebar:
     st.header("About")
     st.markdown(
-        "Visualize **median monthly returns** and **hit rates** for any equity, index, or commodity.\n"
-        "- Pulls data from Yahoo Finance, with FRED fallback for S&P, Dow & Nasdaq.\n"
-        "- Highlights positive months in green, negative in red, and hit‑rate with black diamonds."
+        "Explore the seasonal patterns behind any stock, index, or commodity:\n\n"
+        "- **Broad Coverage**: Pulls data from Yahoo Finance, with automatic fallback to FRED for the S&P 500, Dow, and Nasdaq when going back before 1950.\n"
+        "- **Clean, Reliable Metrics**: Median monthly returns show typical performance while hit rates reveal consistency—how often each month finishes positive.\n"
+        "- **At-a-Glance Insight**: Green bars for positive months, red for negative, and black diamonds to mark the frequency of gains.\n"
+        "- **Customizable Scope**: Enter any ticker and set your preferred start year to tailor the historical depth."
     )
     st.markdown("### Tips")
     st.markdown(
-        "- Enter any Yahoo‑compatible ticker (e.g. `^GSPC`, `AAPL`, `CL=F`).\n"
-        "- Adjust start year to change historical depth.\n"
-        "- Table below shows exact month‑by‑month stats."
+        "- Use any Yahoo-compatible symbol (e.g. `^GSPC`, `AAPL`, `GLD`, `CL=F`).\n"
+        "- Change the start year to shift the analysis window.\n"
+        "- Review the full stats table for monthly breakdowns."
     )
     st.markdown("---")
-    st.markdown("Created by **AD Fund Management LP**")
+    st.markdown("Crafted by **AD Fund Management LP**")
 
 # ── Helper Functions ───────────────────────────────────────
 
